@@ -1,4 +1,4 @@
-class Products {
+abstract class Products {
     private String name;
     private double price;
     private int id;
@@ -52,8 +52,10 @@ class Products {
         }
     }
 
-    public void display() { // <-- add this polymorphism
+    public void displayBasic() { // <-- add this polymorphism
         System.out.println("Name: " + name + " Price: " + price + " Id: " + id);
         showDiscount();
     }
+
+    public abstract void display();  //abstract method
 }

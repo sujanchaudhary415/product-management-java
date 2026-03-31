@@ -8,7 +8,7 @@ class Electronics extends Products {
 
     @Override
     public void display() {
-        super.display();
+        super.displayBasic();
         System.out.println("Brand: " + brand);
 
     }
