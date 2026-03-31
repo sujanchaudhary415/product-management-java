@@ -6,6 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int choice;
         do {
+            System.out.println(" ");
             System.out.println("------PRODUCT MANAGEMENT------");
             System.out.println("1. Add Clothes");
             System.out.println("2. Add Electronics");

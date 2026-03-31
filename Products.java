@@ -2,14 +2,15 @@ class Products {
     private String name;
     private double price;
     private int id;
+    private double discount;
 
-    Products(String name, double price, int id) {
+    Products(String name, double price, int id, double discount) {
         this.name = name;
         this.price = price;
         this.id = id;
+        this.discount = discount;
     }
 
-   
     public String getName() {
         return name;
     }
@@ -22,25 +23,37 @@ class Products {
         return id;
     }
 
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setId(int id) { 
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void price(double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
 
-    public void display() {   // <-- add this polymorphism
-        displayBasic();
+    public void showDiscount() {
+        if (discount > 0) {
+            System.out.println("Discount: " + discount + "%");
+        } else {
+            System.out.println("No discount");
+        }
     }
 
-    public void displayBasic() {
-       System.out.println("Name: " +name + " Price: " +price+ " Id: " +id);
-    
+    public void display() { // <-- add this polymorphism
+        System.out.println("Name: " + name + " Price: " + price + " Id: " + id);
+        showDiscount();
     }
 }

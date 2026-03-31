@@ -21,8 +21,14 @@ public class ProductManagement {
         System.out.println("Enter the size");
         String size = sc.nextLine();
 
-        Clothes clothes = new Clothes(name, price, id, size);
+        System.out.println("Enter the discount: ");
+        double discount=sc.nextDouble();
+
+        sc.nextLine();
+
+        Clothes clothes = new Clothes(name, price, id,discount,size);
         products.add(clothes);
+        System.out.println("Clothes added Succesfully");
 
     }
 
@@ -42,8 +48,14 @@ public class ProductManagement {
         System.out.println("Enter the brand: ");
         String brand = sc.nextLine();
 
-        Electronics electronics = new Electronics(name, price, id, brand);
+         System.out.println("Enter the discount: ");
+        double discount=sc.nextDouble();
+
+        sc.nextLine();
+
+        Electronics electronics = new Electronics(name, price, id,discount ,brand);
         products.add(electronics);
+         System.out.println("Electronics added Succesfully");
 
     }
 
@@ -52,8 +64,10 @@ public class ProductManagement {
 
         if (products.isEmpty()) {
             System.out.println("Data is Empty");
+            return;
         }
         for (Products product : products) {
+            System.out.println("-------------------");
             product.display();
         }
     }
